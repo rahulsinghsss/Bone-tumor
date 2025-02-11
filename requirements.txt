@@ -20,6 +20,7 @@ matplotlib
 
 # File Handling
 python-json-logger
+seaborn 
 
 # Progress Bars
 tqdm
