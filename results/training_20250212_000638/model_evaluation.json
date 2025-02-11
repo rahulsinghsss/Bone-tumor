@@ -1,0 +1,88 @@
+{
+    "dataset_stats": {
+        "train": {
+            "total": 1134,
+            "cancer": 600,
+            "healthy": 534
+        },
+        "valid": {
+            "total": 284,
+            "cancer": 150,
+            "healthy": 134
+        },
+        "test": {
+            "total": 100,
+            "cancer": 17,
+            "healthy": 83
+        }
+    },
+    "random_forest": {
+        "best_parameters": {
+            "classifier__max_depth": 5,
+            "classifier__min_samples_leaf": 2,
+            "classifier__min_samples_split": 5,
+            "classifier__n_estimators": 50
+        },
+        "best_cv_score": 0.9990654205607477,
+        "validation": {
+            "accuracy": 0.9964788732394366,
+            "precision": 0.9965021919597051,
+            "recall": 0.9964788732394366,
+            "f1": 0.9964781284168736,
+            "auc": 0.9984079601990049
+        },
+        "test": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "auc": 1.0
+        }
+    },
+    "svm": {
+        "best_parameters": {
+            "classifier__C": 0.1,
+            "classifier__gamma": "scale",
+            "classifier__kernel": "rbf"
+        },
+        "best_cv_score": 0.9990654205607477,
+        "validation": {
+            "accuracy": 0.9964788732394366,
+            "precision": 0.9965021919597051,
+            "recall": 0.9964788732394366,
+            "f1": 0.9964781284168736,
+            "auc": 0.9965671641791044
+        },
+        "test": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "auc": 1.0
+        }
+    },
+    "mlp": {
+        "best_parameters": {
+            "classifier__alpha": 0.0001,
+            "classifier__hidden_layer_sizes": [
+                64
+            ],
+            "classifier__learning_rate_init": 0.001
+        },
+        "best_cv_score": 0.9982320872274144,
+        "validation": {
+            "accuracy": 0.9964788732394366,
+            "precision": 0.9965021919597051,
+            "recall": 0.9964788732394366,
+            "f1": 0.9964781284168736,
+            "auc": 0.9953731343283582
+        },
+        "test": {
+            "accuracy": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "auc": 1.0
+        }
+    }
+}

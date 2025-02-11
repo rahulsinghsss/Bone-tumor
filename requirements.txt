@@ -1,0 +1,28 @@
+# Deep Learning Framework
+torch
+torchvision
+
+# Machine Learning
+scikit-learn
+numpy
+
+# Image Processing
+Pillow
+
+# Transformers and Models
+transformers
+
+# Web Interface
+streamlit
+
+# Visualization
+matplotlib
+
+# File Handling
+python-json-logger
+
+# Progress Bars
+tqdm
+
+# Optional - for GPU support
+# cuda-python>=11.8.0  # Uncomment if using CUDA

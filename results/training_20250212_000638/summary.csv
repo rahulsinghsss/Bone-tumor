@@ -1,0 +1,5 @@
+,random_forest,svm,mlp
+Best CV Score,0.9991,0.9991,0.9982
+Test Accuracy,1.0,1.0,1.0
+Test F1,1.0,1.0,1.0
+Test AUC,1.0,1.0,1.0
