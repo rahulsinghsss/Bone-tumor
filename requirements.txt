@@ -21,6 +21,7 @@ matplotlib
 # File Handling
 python-json-logger
 seaborn 
+plotly
 
 # Progress Bars
 tqdm
