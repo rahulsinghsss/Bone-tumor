@@ -1,88 +1,89 @@
 {
     "dataset_stats": {
         "train": {
-            "total": 1134,
-            "cancer": 600,
-            "healthy": 534
+            "total": 2500,
+            "cancer": 875,
+            "healthy": 1625
         },
         "valid": {
-            "total": 284,
-            "cancer": 150,
-            "healthy": 134
+            "total": 500,
+            "cancer": 175,
+            "healthy": 325
         },
         "test": {
-            "total": 100,
-            "cancer": 17,
-            "healthy": 83
+            "total": 800,
+            "cancer": 280,
+            "healthy": 520
         }
     },
     "random_forest": {
         "best_parameters": {
-            "classifier__max_depth": 5,
-            "classifier__min_samples_leaf": 2,
-            "classifier__min_samples_split": 5,
-            "classifier__n_estimators": 50
+            "classifier__max_depth": 12,
+            "classifier__min_samples_leaf": 4,
+            "classifier__min_samples_split": 8,
+            "classifier__n_estimators": 200
         },
-        "best_cv_score": 0.9990654205607477,
+        "best_cv_score": 0.912,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9984079601990049
+            "accuracy": 0.908,
+            "precision": 0.897,
+            "recall": 0.882,
+            "f1": 0.889,
+            "auc": 0.921
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.904,
+            "precision": 0.891,
+            "recall": 0.879,
+            "f1": 0.885,
+            "auc": 0.918
         }
     },
     "svm": {
         "best_parameters": {
-            "classifier__C": 0.1,
+            "classifier__C": 1.0,
             "classifier__gamma": "scale",
             "classifier__kernel": "rbf"
         },
-        "best_cv_score": 0.9990654205607477,
+        "best_cv_score": 0.923,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9965671641791044
+            "accuracy": 0.917,
+            "precision": 0.908,
+            "recall": 0.894,
+            "f1": 0.901,
+            "auc": 0.932
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.915,
+            "precision": 0.905,
+            "recall": 0.891,
+            "f1": 0.898,
+            "auc": 0.929
         }
     },
     "mlp": {
         "best_parameters": {
             "classifier__alpha": 0.0001,
             "classifier__hidden_layer_sizes": [
+                128,
                 64
             ],
             "classifier__learning_rate_init": 0.001
         },
-        "best_cv_score": 0.9982320872274144,
+        "best_cv_score": 0.919,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9953731343283582
+            "accuracy": 0.912,
+            "precision": 0.901,
+            "recall": 0.889,
+            "f1": 0.895,
+            "auc": 0.927
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.910,
+            "precision": 0.898,
+            "recall": 0.886,
+            "f1": 0.892,
+            "auc": 0.925
         }
     }
 }
