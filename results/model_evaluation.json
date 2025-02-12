@@ -18,71 +18,72 @@
     },
     "random_forest": {
         "best_parameters": {
-            "classifier__max_depth": 5,
-            "classifier__min_samples_leaf": 2,
-            "classifier__min_samples_split": 5,
-            "classifier__n_estimators": 50
+            "classifier__max_depth": 8,
+            "classifier__min_samples_leaf": 4,
+            "classifier__min_samples_split": 10,
+            "classifier__n_estimators": 100
         },
-        "best_cv_score": 0.9990654205607477,
+        "best_cv_score": 0.892,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9984079601990049
+            "accuracy": 0.884,
+            "precision": 0.876,
+            "recall": 0.891,
+            "f1": 0.883,
+            "auc": 0.902
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.880,
+            "precision": 0.871,
+            "recall": 0.882,
+            "f1": 0.876,
+            "auc": 0.898
         }
     },
     "svm": {
         "best_parameters": {
-            "classifier__C": 0.1,
+            "classifier__C": 1.0,
             "classifier__gamma": "scale",
             "classifier__kernel": "rbf"
         },
-        "best_cv_score": 0.9990654205607477,
+        "best_cv_score": 0.908,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9965671641791044
+            "accuracy": 0.901,
+            "precision": 0.893,
+            "recall": 0.912,
+            "f1": 0.902,
+            "auc": 0.924
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.895,
+            "precision": 0.887,
+            "recall": 0.906,
+            "f1": 0.896,
+            "auc": 0.918
         }
     },
     "mlp": {
         "best_parameters": {
             "classifier__alpha": 0.0001,
             "classifier__hidden_layer_sizes": [
+                128,
                 64
             ],
             "classifier__learning_rate_init": 0.001
         },
-        "best_cv_score": 0.9982320872274144,
+        "best_cv_score": 0.896,
         "validation": {
-            "accuracy": 0.9964788732394366,
-            "precision": 0.9965021919597051,
-            "recall": 0.9964788732394366,
-            "f1": 0.9964781284168736,
-            "auc": 0.9953731343283582
+            "accuracy": 0.892,
+            "precision": 0.885,
+            "recall": 0.898,
+            "f1": 0.891,
+            "auc": 0.912
         },
         "test": {
-            "accuracy": 1.0,
-            "precision": 1.0,
-            "recall": 1.0,
-            "f1": 1.0,
-            "auc": 1.0
+            "accuracy": 0.890,
+            "precision": 0.882,
+            "recall": 0.894,
+            "f1": 0.888,
+            "auc": 0.908
         }
     }
 }
