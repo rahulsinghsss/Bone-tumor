@@ -9,8 +9,6 @@ import json
 import plotly.graph_objects as go
 import plotly.express as px
 import pandas as pd
-import subprocess
-import sys
 from datetime import datetime  
 
 def load_models():
@@ -127,38 +125,7 @@ def create_confidence_gauge(probability, model_name):
     ))
     return fig
 
-def train_models_with_progress():
-    try:
-        # Create progress placeholder
-        progress_placeholder = st.empty()
-        progress_placeholder.info("Starting model training...")
-        
-        # Run the training script
-        process = subprocess.Popen([sys.executable, 'train.py'], 
-                                 stdout=subprocess.PIPE, 
-                                 stderr=subprocess.PIPE,
-                                 universal_newlines=True)
-        
-        # Display output in real-time
-        while True:
-            output = process.stdout.readline()
-            if output == '' and process.poll() is not None:
-                break
-            if output:
-                progress_placeholder.info(output.strip())
-        
-        # Check if training was successful
-        if process.returncode == 0:
-            progress_placeholder.success("Training completed successfully!")
-            st.experimental_rerun()
-        else:
-            error = process.stderr.read()
-            progress_placeholder.error(f"Training failed with error: {error}")
-            
-    except Exception as e:
-        st.error(f"An error occurred during training: {str(e)}")
-
-def resize_image(image, max_size=200):  # Changed from 400 to 200
+def resize_image(image, max_size=200):
     """Resize image while maintaining aspect ratio"""
     ratio = max_size / max(image.size)
     new_size = tuple([int(x * ratio) for x in image.size])
@@ -167,11 +134,6 @@ def resize_image(image, max_size=200):  # Changed from 400 to 200
 def main():
     st.set_page_config(layout="wide")
     st.title("Bone Tumor Detection System")
-    
-    # Add training button in sidebar
-    st.sidebar.title("Model Management")
-    if st.sidebar.button("Train Models"):
-        train_models_with_progress()
     
     # Load results
     results = load_results()
@@ -187,7 +149,7 @@ def main():
         if uploaded_file is not None:
             # Display uploaded image with smaller size
             original_image = Image.open(uploaded_file).convert('RGB')
-            resized_image = resize_image(original_image, max_size=200)  # Smaller size for display
+            resized_image = resize_image(original_image, max_size=200)
             
             # Create two columns for better layout
             col1, col2 = st.columns([1, 2])
@@ -198,7 +160,7 @@ def main():
             models = load_models()
             
             if not models:
-                st.error("No trained models found. Please train the models first using the button in the sidebar.")
+                st.error("No trained models found. Please contact system administrator.")
                 return
             
             # Make predictions using resized image
@@ -220,11 +182,11 @@ def main():
                         
                         # Classification result with different thresholds
                         if model_type == 'mlp':
-                            threshold = 0.10  # 10% threshold for MLP
+                            threshold = 0.10
                         elif model_type == 'svm':
-                            threshold = 0.90  # 90% threshold for SVM
+                            threshold = 0.90
                         else:
-                            threshold = 0.50  # 50% threshold for other models
+                            threshold = 0.50
                             
                         if prediction_prob > threshold:
                             st.warning(f"Potential tumor detected")
@@ -279,7 +241,7 @@ def main():
             st.dataframe(threshold_df, use_container_width=True)
             st.write("---")
             
-            # Display comparison chart with both confidence and performance
+            # Display comparison chart
             comparison_fig = create_comparison_chart(
                 {k: v for k, v in results.items() if k != 'dataset_stats'}
             )
@@ -325,7 +287,7 @@ def main():
                     except:
                         pass
         else:
-            st.error("No model evaluation results found. Please train the models first using the button in the sidebar.")
+            st.error("No model evaluation results found. Please contact system administrator.")
 
 if __name__ == "__main__":
     main()
